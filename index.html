@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- icons CDN -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <!-- Google Font CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <title>luxethreads By Bisma</title>
+  </head>
+  <body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+      <span><ion-icon name="call-outline"></ion-icon>+92 312789654</span>
+      <ul>
+        <li>
+          <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+        </li>
+        <li>
+          <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+        </li>
+        <li>
+          <a href="#"><ion-icon name="logo-linkedin"></ion-icon></a>
+        </li>
+      </ul>
+    </div>
+    <!-- Navigation Bar -->
+    <nav>
+      <div class="logo">
+        <a href="#"><img src="logo/logo2.png" alt="logo" />LuxeThreads</a>
+      </div>
+      <div class="toggle">
+        <a href="#"><ion-icon name="menu-outline"></ion-icon></a>
+      </div>
+      <ul class="center menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Bridal</a></li>
+        <li><a href="#">Ready to Wear</a></li>
+        <li>
+          <div class="dropdown">
+            <button class="dropbtn">
+              Collections
+              <ion-icon name="caret-down-outline"></ion-icon>
+            </button>
+            <div class="dropdown-content">
+              <div class="header">
+                <h2>Collections Menu</h2>
+              </div>
+              <div class="row">
+                <div class="column">
+                  <h3>Collection 1</h3>
+                  <a href="#">Dress 1</a>
+                  <a href="#">Dress 2</a>
+                  <a href="#">Dress 3</a>
+                </div>
+                <div class="column">
+                  <h3>Collection 2</h3>
+                  <a href="#">Dress 1</a>
+                  <a href="#">Dress 2</a>
+                  <a href="#">Dress 3</a>
+                </div>
+                <div class="column">
+                  <h3>Collection 3</h3>
+                  <a href="#">Dress 1</a>
+                  <a href="#">Dress 2</a>
+                  <a href="#">Dress 3</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <ul class="menu right">
+        <li>
+          <input type="text" placeholder="Search Here" />
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Home Content -->
+    <section class="full-width-picture">
+      <div class="overlay"></div>
+      <div class="content">
+        <h1>Welcome to LuxeThreads</h1>
+        <p>Discover our latest collection</p>
+        <a href="#" class="btn explore">Explore</a>
+        <a href="#" class="btn aboutus">About Us</a>
+      </div>
+    </section>
+    <!-- Jquery CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+      $(function () {
+        $(".toggle").on("click", function () {
+          if ($(".menu").hasClass("active")) {
+            $(".menu").removeClass("active");
+            $(this).find("a").html("<ion-icon name='menu-outline'></ion-icon>");
+          } else {
+            $(".menu").addClass("active");
+            $(this)
+              .find("a")
+              .html("<ion-icon name='close-outline'></ion-icon>");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

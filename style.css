@@ -1,0 +1,345 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 25px;
+  background: #e6e5e5;
+}
+
+.top-bar span {
+  color: black;
+}
+
+.top-bar ul {
+  list-style: none;
+  display: flex;
+}
+
+.top-bar li {
+  margin: 0px 5px;
+}
+
+.top-bar a {
+  color: black;
+  transition-property: color;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+  transition-delay: 100ms;
+}
+
+.top-bar a:hover {
+  color: #dc143c;
+}
+
+.logo img {
+  width: 50px;
+  height: 70px;
+
+  margin-right: 10px;
+}
+
+nav {
+  background: white;
+  padding: 5px 20px;
+  display: flex;
+  align-items: center;
+}
+
+.logo a {
+  color: black;
+}
+
+.menu a {
+  color: black;
+  transition-property: color;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out;
+  transition-delay: 100ms;
+}
+
+.menu a:hover {
+  color: #dc143c;
+}
+
+.logo {
+  flex: 1;
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  width: 500px;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+.menu li {
+  padding: 15px 10px;
+  font-size: 16px;
+}
+
+.center {
+  display: flex;
+  float: left;
+}
+.center li {
+  padding: 0px 20px;
+}
+
+.menu input[type="text"] {
+  float: right;
+  padding: 6px;
+  border: 1px solid black;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+}
+
+.toggle {
+  font-size: 30px;
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  nav {
+    display: block;
+    position: relative;
+    padding: 15px 20px;
+  }
+
+  .menu {
+    margin-top: 15px;
+    display: none;
+  }
+
+  .menu.active,
+  .toggle {
+    display: block;
+  }
+
+  .toggle {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+  }
+  .column {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* DROPDOWN MENU BAR*/
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: black;
+  /* padding: 14px 16px; */
+  background-color: inherit;
+  font: inherit;
+  margin: 0;
+  cursor: pointer;
+  transition: all 300ms ease-in-out 100ms;
+}
+
+.navbar a:hover,
+.dropdown:hover .dropbtn {
+  color: #dc143c;
+}
+
+/* USED FOR DROPDOWN MENU TRANSITION */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  width: 100%;
+  left: 0;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content .header {
+  background: #dc143c;
+  padding: 16px;
+  color: black;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  animation: fadeIn 1s;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+  background-color: #eeebeb;
+  height: 250px;
+}
+
+.column a {
+  float: none;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  transition-property: background-color, color;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+  transition-delay: 100ms;
+}
+
+.column a:hover {
+  background-color: #ddd;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Add styles for small screens */
+@media only screen and (max-width: 1199px) and (min-width: 600px) {
+  /* Add small screen styles here */
+  .top-bar {
+    text-align: center;
+  }
+  .top-bar span {
+    display: block;
+    margin-bottom: 10px;
+  }
+  .top-bar ul {
+    display: flex;
+    justify-content: center;
+  }
+  .top-bar ul li {
+    margin: 0 5px;
+  }
+  nav {
+    display: flex;
+    flex-direction: column;
+  }
+  .toggle {
+    display: block;
+  }
+  .menu {
+    display: none;
+  }
+  .menu.active {
+    display: block;
+  }
+  .menu li {
+    margin-bottom: 10px;
+  }
+  .center {
+    text-align: center;
+  }
+  .right {
+    text-align: center;
+    margin-top: 20px;
+  }
+}
+
+/* HOME STYLING */
+.full-width-picture {
+  position: relative;
+  width: 100%;
+  height: 500px; /* Adjust height as needed */
+  background-image: url("/Images/coverpage.jpg"); /* Replace 'path/to/your/image.jpg' with the path to your image */
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Adjust the alpha value for the overlay */
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.content h1 {
+  font-size: 2.5rem;
+}
+
+.content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-right: 10px;
+  color: #fff;
+  text-decoration: none;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.explore {
+  background-color: #dc143c;
+}
+
+.aboutus {
+  background-color: #dc143c;
+}
+
+.btn:hover {
+  background-color: transparent;
+  border-color: #dc143c;
+}
